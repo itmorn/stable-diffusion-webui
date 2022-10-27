@@ -10,8 +10,8 @@ if not os.path.exists(dir_out_zip):
 
 
 for idx,name_pic in tqdm(enumerate(os.listdir("z_out_img"))):
-    if idx%3==0:
-        continue
+    # if idx%3==0:
+    #     continue
     geci = name_pic[:-17]+"/"
     if not os.path.exists(dir_out_zip+geci):
         os.makedirs(dir_out_zip+geci)

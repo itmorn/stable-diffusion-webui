@@ -16,7 +16,7 @@ if not os.path.exists(dir_out_img):
     os.makedirs(dir_out_img)
 
 lst_dir = [dir_in_img+i+"/" for i in os.listdir(dir_in_img)]
-lst_dir.sort(reverse=True)
+lst_dir.sort()
 
 # 每个文件夹遍历X次
 for i in range(10*len(lst_dir)):
@@ -37,7 +37,7 @@ for i in range(10*len(lst_dir)):
         h,w,c = img.shape
         if h<100 or w<100:
             continue
-        img_np = client_util.get_img(img,url,step=30)
+        img_np = client_util.get_img(img,url)
 
         cv2.imwrite(url_img, img_np)
         shutil.move(url_img, dir_out_img + dir_cur.split("/")[1] + url_img[-17:])
